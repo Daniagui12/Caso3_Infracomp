@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.net.Socket;
 import java.security.PublicKey;
+import java.security.SignatureException;
 
 public class ClienteThread extends Thread {
 
@@ -71,8 +72,8 @@ public class ClienteThread extends Thread {
                     System.out.println("La firma no pudo ser verificada");
                     ac.println("ERROR");
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
+            } catch (SignatureException s) {
+                s.printStackTrace();
                 ac.println("ERROR");
             }
 
