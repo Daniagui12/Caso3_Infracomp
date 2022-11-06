@@ -9,14 +9,14 @@ import java.nio.charset.StandardCharsets;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.PrivateKey;
-import java.security.PublicKey;
+//import java.security.PublicKey;
 import java.security.SecureRandom;
-import java.util.Random;
+//import java.util.Random;
 
 import javax.crypto.SecretKey;
 import javax.crypto.spec.IvParameterSpec;
 
-public class SrvThread extends Thread{
+public class SrvThread extends Thread {
 
 	// constantes
 	

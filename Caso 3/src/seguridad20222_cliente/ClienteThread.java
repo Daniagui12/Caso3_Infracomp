@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.math.BigInteger;
 import java.net.Socket;
-import java.nio.charset.StandardCharsets;
 import java.security.PublicKey;
 
 public class ClienteThread extends Thread {
@@ -43,17 +42,14 @@ public class ClienteThread extends Thread {
 
             // Recibe g
             linea = dc.readLine();
-            String gString = linea;
             g = new BigInteger(linea);
             
             // Recibe p
             linea = dc.readLine();
-            String pString = linea;
             p = new BigInteger(linea);
 
             // Recibe g2x
             linea = dc.readLine();
-            String g2xString = linea;
             g2x = new BigInteger(linea);
 
             // Recibe la firma y procede a verificarla
