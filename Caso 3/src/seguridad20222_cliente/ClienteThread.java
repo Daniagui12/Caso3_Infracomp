@@ -18,7 +18,7 @@ public class ClienteThread extends Thread {
 
     private Socket sc;
     private String id;
-    private ClienteSecurityFunctions csf;
+    private static ClienteSecurityFunctions csf = new ClienteSecurityFunctions();
     private PublicKey publicKey;
     private PrintWriter ac;
     private BufferedReader dc;
@@ -26,7 +26,6 @@ public class ClienteThread extends Thread {
     ClienteThread(Socket socket, String id) {
         this.sc = socket;
         this.id = id;
-        this.csf = new ClienteSecurityFunctions();
     }
 
     @Override
@@ -70,7 +69,7 @@ public class ClienteThread extends Thread {
             try {
                 boolean  signatureVerified = csf.checkSignature(publicKey, signatureBytes, completeDiffieHelman);
                 if (signatureVerified) {
-                    System.out.println("La firma fue verificada correctamente");
+                    System.out.println("Cliente " + this.id + " - La firma fue verificada correctamente");
 
                     // 5. Se envia OK dado que fue verificada la firma
                     ac.println("OK");
@@ -107,6 +106,8 @@ public class ClienteThread extends Thread {
                     
                     //8a. Encriptamos la consulta
                     byte[] consultaEncriptada = csf.senc(consultaBytes, ck_client, iv1Spec, this.id);
+                    System.out.println("\nCliente " + id + " - tiempo acumulado de encriptacion de consulta: " + csf.getTiempoCifrado() + " ns");
+                    
                     byte[] hashConsulta = csf.hmac(consultaBytes, ck_mac);
                     String consultaEncriptadaString = byte2str(consultaEncriptada);
                     String hashConsultaString = byte2str(hashConsulta);
@@ -130,37 +131,37 @@ public class ClienteThread extends Thread {
                         byte[] iv2 = str2byte(str_iv2);
                         IvParameterSpec ivSpec2 = new IvParameterSpec(iv2);
 
-                        //12a. Desencriptamos la respuesta
+                        //12. Desencriptamos y verificamos la integridad de la respuesta
                         byte[] desencriptada = csf.sdec(byte_consulta, ck_client, ivSpec2);
                         boolean verificar = csf.checkInt(desencriptada, ck_mac, byte_mac);
                         System.out.println("Cliente " + this.id + " Integrity check: " + verificar);  
                         if (verificar) {
                             String respuestaDesencriptadaString = new String(desencriptada, StandardCharsets.UTF_8);
-                            System.out.println("Cliente " + this.id + " - respuesta: " + respuestaDesencriptadaString);
-                            System.out.println("Consulta enviada por el cliente " + this.id + ": " + consultaString);
+                            System.out.println("Cliente " + this.id + " Consulta enviada: " + consultaString + " - Respuesta recibida: " + respuestaDesencriptadaString);
+                            //13. Se envia OK dado que fue verificada la integridad
                             ac.println("OK");
                             System.out.println("Cliente " + this.id + " - Cerrando conexion con un resultado de ejecucion exitoso");
                         } else {
                             System.out.println("Cliente " + this.id + " - respuesta: " + " No se pudo verificar la integridad de la respuesta");
+                            //13. Se envia error debido a que la integridad de la respuesta no pudo ser verificada
                             ac.println("ERROR");
                         }
 
                     } else {
-                        System.out.println("Cliente " + id + " - Error en la respuesta del servidor");
+                        System.out.println("Cliente " + this.id + " - Error en la respuesta del servidor");
                     }
     
                 } else {
-                    System.out.println("La firma no pudo ser verificada");
+                    System.out.println("Cliente " + this.id + " - La firma no pudo ser verificada");
 
                     // 5. Se envia ERROR dado que no fue verificada la firma correctamente
                     ac.println("ERROR");
                 }
             } catch (SignatureException s) {
                 s.printStackTrace();
+                System.out.println("Cliente " + this.id + " - La firma no pudo ser verificada");
                 ac.println("ERROR");
             }
-
-
 
 	        sc.close();
 	    } catch (Exception e) { e.printStackTrace(); }

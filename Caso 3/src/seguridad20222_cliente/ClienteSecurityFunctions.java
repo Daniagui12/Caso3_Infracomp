@@ -19,6 +19,7 @@ import javax.crypto.spec.SecretKeySpec;
 public class ClienteSecurityFunctions {
 	private String algoritmo_simetrico = "AES/CBC/PKCS5Padding";
 	private String algoritmo_asimetrico = "RSA";
+	public long tiempoCifrado = 0;
     
     public boolean checkSignature(PublicKey publica, byte[] firma, String mensaje) throws Exception {
         Signature publicSignature = Signature.getInstance("SHA256withRSA");
@@ -95,6 +96,7 @@ public class ClienteSecurityFunctions {
 		byte[] tmp = decifrador.doFinal(msg);
 	    long end = System.nanoTime();      
 	    System.out.println(id+" --- Elapsed Time for SYM encryption in nano seconds: "+ (end-start));   
+		tiempoCifrado += (end-start);			
 		return tmp;
 	}
 	
@@ -121,5 +123,9 @@ public class ClienteSecurityFunctions {
 			e.printStackTrace();
 		}
 		return pubkey;
+	}
+
+	public long getTiempoCifrado() {
+		return tiempoCifrado;
 	}
 }
