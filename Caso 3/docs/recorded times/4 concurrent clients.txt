@@ -1,0 +1,21 @@
+///HMAC
+Cliente 3 - tiempo acumulado de generacion de HMAC: 1187300 ns
+Cliente 0 - tiempo acumulado de generacion de HMAC: 2714100 ns
+Cliente 1 - tiempo acumulado de generacion de HMAC: 2534600 ns
+
+///Encriptacion
+Cliente 1 - tiempo acumulado de encriptacion de consulta: 34776500 ns
+Cliente 3 - tiempo acumulado de encriptacion de consulta: 17393100 ns
+Cliente 0 - tiempo acumulado de encriptacion de consulta: 52160600 ns
+
+
+///Verificacion de firma
+Cliente 2 - tiempo acumulado de verificacion de firma: 4680700 ns
+Cliente 0 - tiempo acumulado de verificacion de firma: 5635900 ns
+Cliente 1 - tiempo acumulado de verificacion de firma: 36408400 ns
+Cliente 3 - tiempo acumulado de verificacion de firma: 36956300 ns
+
+///Calcular G2Y
+Cliente 3 - tiempo acumulado de generacion de g2y: 991700 ns
+Cliente 1 - tiempo acumulado de generacion de g2y: 2457500 ns
+Cliente 0 - tiempo acumulado de generacion de g2y: 2371600 ns

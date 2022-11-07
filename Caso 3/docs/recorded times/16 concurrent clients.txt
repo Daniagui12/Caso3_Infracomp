@@ -1,0 +1,52 @@
+///HMAC
+Cliente 11 - tiempo acumulado de generacion de HMAC: 1491900 ns
+Cliente 0 - tiempo acumulado de generacion de HMAC: 3217900 ns
+Cliente 12 - tiempo acumulado de generacion de HMAC: 3147200 ns
+Cliente 7 - tiempo acumulado de generacion de HMAC: 2923800 ns
+Cliente 9 - tiempo acumulado de generacion de HMAC: 2446600 ns
+Cliente 1 - tiempo acumulado de generacion de HMAC: 1889700 ns
+Cliente 6 - tiempo acumulado de generacion de HMAC: 1819600 ns
+Cliente 4 - tiempo acumulado de generacion de HMAC: 1755200 ns
+Cliente 14 - tiempo acumulado de generacion de HMAC: 3323800 ns
+
+///Encriptacion
+Cliente 11 - tiempo acumulado de encriptacion de consulta: 19553600 ns
+Cliente 4 - tiempo acumulado de encriptacion de consulta: 157852800 ns
+Cliente 6 - tiempo acumulado de encriptacion de consulta: 138085100 ns
+Cliente 1 - tiempo acumulado de encriptacion de consulta: 118462100 ns
+Cliente 9 - tiempo acumulado de encriptacion de consulta: 98695400 ns
+Cliente 7 - tiempo acumulado de encriptacion de consulta: 78944100 ns
+Cliente 12 - tiempo acumulado de encriptacion de consulta: 58901800 ns
+Cliente 0 - tiempo acumulado de encriptacion de consulta: 39247400 ns
+Cliente 14 - tiempo acumulado de encriptacion de consulta: 201274400 ns
+Cliente 5 - tiempo acumulado de encriptacion de consulta: 177413800 ns
+
+///Verificacion de firma
+Cliente 6 - tiempo acumulado de verificacion de firma: 4757100 ns
+Cliente 3 - tiempo acumulado de verificacion de firma: 5282400 ns
+Cliente 14 - tiempo acumulado de verificacion de firma: 5815800 ns
+Cliente 1 - tiempo acumulado de verificacion de firma: 6366000 ns
+Cliente 0 - tiempo acumulado de verificacion de firma: 6886500 ns
+Cliente 2 - tiempo acumulado de verificacion de firma: 7442100 ns
+Cliente 9 - tiempo acumulado de verificacion de firma: 8027200 ns
+Cliente 7 - tiempo acumulado de verificacion de firma: 8459600 ns
+Cliente 8 - tiempo acumulado de verificacion de firma: 8859300 ns
+Cliente 13 - tiempo acumulado de verificacion de firma: 9166300 ns
+Cliente 5 - tiempo acumulado de verificacion de firma: 9580800 ns
+Cliente 4 - tiempo acumulado de verificacion de firma: 9901200 ns
+Cliente 12 - tiempo acumulado de verificacion de firma: 10219600 ns
+Cliente 10 - tiempo acumulado de verificacion de firma: 10591100 ns
+Cliente 15 - tiempo acumulado de verificacion de firma: 11231600 ns
+Cliente 11 - tiempo acumulado de verificacion de firma: 11644300 ns
+
+///Calcular G2Y
+Cliente 12 - tiempo acumulado de generacion de g2y: 676600 ns
+Cliente 7 - tiempo acumulado de generacion de g2y: 4763400 ns
+Cliente 4 - tiempo acumulado de generacion de g2y: 3118700 ns
+Cliente 14 - tiempo acumulado de generacion de g2y: 2253400 ns
+Cliente 6 - tiempo acumulado de generacion de g2y: 1677500 ns
+Cliente 1 - tiempo acumulado de generacion de g2y: 6613800 ns
+Cliente 0 - tiempo acumulado de generacion de g2y: 6366500 ns
+Cliente 9 - tiempo acumulado de generacion de g2y: 5835100 ns
+Cliente 5 - tiempo acumulado de generacion de g2y: 4763400 ns
+Cliente 11 - tiempo acumulado de generacion de g2y: 6763400 ns

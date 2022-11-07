@@ -1,0 +1,110 @@
+///HMAC
+Cliente 4 - tiempo acumulado de generacion de HMAC: 2207300 ns
+Cliente 13 - tiempo acumulado de generacion de HMAC: 2888700 ns
+Cliente 27 - tiempo acumulado de generacion de HMAC: 2945100 ns
+Cliente 16 - tiempo acumulado de generacion de HMAC: 2033500 ns
+Cliente 1 - tiempo acumulado de generacion de HMAC: 1741300 ns
+Cliente 15 - tiempo acumulado de generacion de HMAC: 1690200 ns
+Cliente 22 - tiempo acumulado de generacion de HMAC: 4320000 ns
+Cliente 25 - tiempo acumulado de generacion de HMAC: 4446500 ns
+Cliente 30 - tiempo acumulado de generacion de HMAC: 7417900 ns
+Cliente 28 - tiempo acumulado de generacion de HMAC: 4578400 ns
+Cliente 31 - tiempo acumulado de generacion de HMAC: 4510900 ns
+Cliente 8 - tiempo acumulado de generacion de HMAC: 8053500 ns
+Cliente 24 - tiempo acumulado de generacion de HMAC: 8105500 ns
+Cliente 6 - tiempo acumulado de generacion de HMAC: 4368900 ns
+Cliente 19 - tiempo acumulado de generacion de HMAC: 4265700 ns
+Cliente 21 - tiempo acumulado de generacion de HMAC: 2783100 ns
+Cliente 3 - tiempo acumulado de generacion de HMAC: 2713700 ns
+Cliente 2 - tiempo acumulado de generacion de HMAC: 2493900 ns
+Cliente 18 - tiempo acumulado de generacion de HMAC: 8223500 ns
+Cliente 12 - tiempo acumulado de generacion de HMAC: 7955100 ns
+Cliente 10 - tiempo acumulado de generacion de HMAC: 7478500 ns
+Cliente 11 - tiempo acumulado de generacion de HMAC: 8270400 ns
+
+///Encriptacion
+Cliente 15 - tiempo acumulado de encriptacion de consulta: 19920500 ns
+Cliente 1 - tiempo acumulado de encriptacion de consulta: 80962900 ns
+Cliente 16 - tiempo acumulado de encriptacion de consulta: 101072700 ns
+Cliente 4 - tiempo acumulado de encriptacion de consulta: 161304900 ns
+Cliente 2 - tiempo acumulado de encriptacion de consulta: 239614800 ns
+Cliente 3 - tiempo acumulado de encriptacion de consulta: 220449300 ns
+Cliente 21 - tiempo acumulado de encriptacion de consulta: 200868200 ns
+Cliente 13 - tiempo acumulado de encriptacion de consulta: 180619000 ns
+Cliente 27 - tiempo acumulado de encriptacion de consulta: 141410900 ns
+Cliente 19 - tiempo acumulado de encriptacion de consulta: 121154700 ns
+Cliente 22 - tiempo acumulado de encriptacion de consulta: 60421100 ns
+Cliente 6 - tiempo acumulado de encriptacion de consulta: 40644200 ns
+Cliente 25 - tiempo acumulado de encriptacion de consulta: 322115200 ns
+Cliente 31 - tiempo acumulado de encriptacion de consulta: 342220400 ns
+Cliente 28 - tiempo acumulado de encriptacion de consulta: 362455700 ns
+Cliente 30 - tiempo acumulado de encriptacion de consulta: 404424900 ns
+Cliente 10 - tiempo acumulado de encriptacion de consulta: 425342400 ns
+Cliente 12 - tiempo acumulado de encriptacion de consulta: 383452200 ns
+Cliente 8 - tiempo acumulado de encriptacion de consulta: 301704900 ns
+Cliente 24 - tiempo acumulado de encriptacion de consulta: 280922800 ns
+Cliente 18 - tiempo acumulado de encriptacion de consulta: 260007900 ns
+Cliente 11 - tiempo acumulado de encriptacion de consulta: 445473400 ns
+
+///Verificacion de firma
+Cliente 22 - tiempo acumulado de verificacion de firma: 4309100 ns
+Cliente 27 - tiempo acumulado de verificacion de firma: 4966000 ns
+Cliente 6 - tiempo acumulado de verificacion de firma: 7700000 ns
+Cliente 19 - tiempo acumulado de verificacion de firma: 8220100 ns
+Cliente 26 - tiempo acumulado de verificacion de firma: 12740000 ns
+Cliente 1 - tiempo acumulado de verificacion de firma: 13382000 ns
+Cliente 16 - tiempo acumulado de verificacion de firma: 13968700 ns
+Cliente 8 - tiempo acumulado de verificacion de firma: 14454900 ns
+Cliente 15 - tiempo acumulado de verificacion de firma: 14835700 ns
+Cliente 24 - tiempo acumulado de verificacion de firma: 15178600 ns
+Cliente 4 - tiempo acumulado de verificacion de firma: 15503900 ns
+Cliente 3 - tiempo acumulado de verificacion de firma: 15820800 ns
+Cliente 25 - tiempo acumulado de verificacion de firma: 16128000 ns
+Cliente 0 - tiempo acumulado de verificacion de firma: 17538600 ns
+Cliente 12 - tiempo acumulado de verificacion de firma: 17851800 ns
+Cliente 11 - tiempo acumulado de verificacion de firma: 18862600 ns
+Cliente 21 - tiempo acumulado de verificacion de firma: 19199800 ns
+Cliente 5 - tiempo acumulado de verificacion de firma: 19502000 ns
+Cliente 13 - tiempo acumulado de verificacion de firma: 20208600 ns
+Cliente 28 - tiempo acumulado de verificacion de firma: 20556100 ns
+Cliente 10 - tiempo acumulado de verificacion de firma: 20902800 ns
+Cliente 30 - tiempo acumulado de verificacion de firma: 21362300 ns
+Cliente 18 - tiempo acumulado de verificacion de firma: 21614400 ns
+Cliente 23 - tiempo acumulado de verificacion de firma: 22313100 ns
+Cliente 14 - tiempo acumulado de verificacion de firma: 21907600 ns
+Cliente 2 - tiempo acumulado de verificacion de firma: 28589200 ns
+Cliente 7 - tiempo acumulado de verificacion de firma: 27872500 ns
+Cliente 29 - tiempo acumulado de verificacion de firma: 25204100 ns
+Cliente 9 - tiempo acumulado de verificacion de firma: 24940600 ns
+Cliente 20 - tiempo acumulado de verificacion de firma: 22116500 ns
+Cliente 31 - tiempo acumulado de verificacion de firma: 30427800 ns
+Cliente 17 - tiempo acumulado de verificacion de firma: 30619500 ns
+
+///Calcular G2Y
+Cliente 30 - tiempo acumulado de generacion de g2y: 673500 ns
+Cliente 10 - tiempo acumulado de generacion de g2y: 1406000 ns
+Cliente 22 - tiempo acumulado de generacion de g2y: 5539700 ns
+Cliente 6 - tiempo acumulado de generacion de g2y: 15651800 ns
+Cliente 27 - tiempo acumulado de generacion de g2y: 15338500 ns
+Cliente 19 - tiempo acumulado de generacion de g2y: 14975400 ns
+Cliente 1 - tiempo acumulado de generacion de g2y: 14631700 ns
+Cliente 16 - tiempo acumulado de generacion de g2y: 14331800 ns
+Cliente 8 - tiempo acumulado de generacion de g2y: 14090200 ns
+Cliente 15 - tiempo acumulado de generacion de g2y: 13830400 ns
+Cliente 24 - tiempo acumulado de generacion de g2y: 13533400 ns
+Cliente 4 - tiempo acumulado de generacion de g2y: 12885300 ns
+Cliente 3 - tiempo acumulado de generacion de g2y: 12354900 ns
+Cliente 25 - tiempo acumulado de generacion de g2y: 12040700 ns
+Cliente 12 - tiempo acumulado de generacion de g2y: 11639300 ns
+Cliente 11 - tiempo acumulado de generacion de g2y: 11236800 ns
+Cliente 21 - tiempo acumulado de generacion de g2y: 10819500 ns
+Cliente 13 - tiempo acumulado de generacion de g2y: 10530300 ns
+Cliente 28 - tiempo acumulado de generacion de g2y: 6292000 ns
+Cliente 18 - tiempo acumulado de generacion de g2y: 15767800 ns
+Cliente 2 - tiempo acumulado de generacion de g2y: 15981800 ns
+Cliente 31 - tiempo acumulado de generacion de g2y: 16361400 ns
+
+
+
+
+
