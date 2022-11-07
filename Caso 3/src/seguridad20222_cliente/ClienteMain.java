@@ -22,6 +22,7 @@ public class ClienteMain {
                 ClienteThread c = new ClienteThread(sc, id);
                 c.start();
             }
+            System.out.println("All clients created");
             
         } catch (Exception e) { e.printStackTrace(); }
     }

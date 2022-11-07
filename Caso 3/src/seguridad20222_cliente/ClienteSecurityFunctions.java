@@ -20,12 +20,17 @@ public class ClienteSecurityFunctions {
 	private String algoritmo_simetrico = "AES/CBC/PKCS5Padding";
 	private String algoritmo_asimetrico = "RSA";
 	public long tiempoCifrado = 0;
+	public long tiempoHMAC = 0;
+	public long tiempoFirma = 0;
     
     public boolean checkSignature(PublicKey publica, byte[] firma, String mensaje) throws Exception {
         Signature publicSignature = Signature.getInstance("SHA256withRSA");
+		long startTime = System.nanoTime();
         publicSignature.initVerify(publica);
         publicSignature.update(mensaje.getBytes(StandardCharsets.UTF_8));
         boolean isCorrect = publicSignature.verify(firma);
+		long endTime = System.nanoTime();
+		tiempoFirma += (endTime - startTime);
         return isCorrect;
     }
     
@@ -46,8 +51,11 @@ public class ClienteSecurityFunctions {
     
 	public byte[] hmac(byte[] msg, SecretKey key) throws Exception {
 		Mac mac = Mac.getInstance("HMACSHA256");
+		long start = System.nanoTime();
 		mac.init(key);
 		byte[] bytes = mac.doFinal(msg);
+		long end = System.nanoTime();
+		tiempoHMAC += (end - start);
 		return bytes;
 	}
 
@@ -127,5 +135,13 @@ public class ClienteSecurityFunctions {
 
 	public long getTiempoCifrado() {
 		return tiempoCifrado;
+	}
+
+	public long getTiempoHMAC() {
+		return tiempoHMAC;
+	}
+
+	public long getTiempoFirma() {
+		return tiempoFirma;
 	}
 }

@@ -19,6 +19,7 @@ public class ClienteThread extends Thread {
     private Socket sc;
     private String id;
     private static ClienteSecurityFunctions csf = new ClienteSecurityFunctions();
+    private static long tiempoG2Y = 0;
     private PublicKey publicKey;
     private PrintWriter ac;
     private BufferedReader dc;
@@ -67,7 +68,8 @@ public class ClienteThread extends Thread {
             String completeDiffieHelman = g.toString() + "," + p.toString() + "," + g2x;
             System.out.println("Cliente " + this.id + " verificando firma de " + completeDiffieHelman);
             try {
-                boolean  signatureVerified = csf.checkSignature(publicKey, signatureBytes, completeDiffieHelman);
+                boolean signatureVerified = csf.checkSignature(publicKey, signatureBytes, completeDiffieHelman);
+                System.out.println("\nCliente " + id + " - tiempo acumulado de verificacion de firma: " + csf.getTiempoFirma() + " ns\n");
                 if (signatureVerified) {
                     System.out.println("Cliente " + this.id + " - La firma fue verificada correctamente");
 
@@ -75,11 +77,13 @@ public class ClienteThread extends Thread {
                     ac.println("OK");
 
                     //6a. Generamos g2y teniendo en cuenta los pasos anteriores
+                    //Calculamos el tiempo para la generacion de g2y
                     SecureRandom r = new SecureRandom();
                     int x = Math.abs(r.nextInt());
                     Long longx = Long.valueOf(x);
                     BigInteger bix = BigInteger.valueOf(longx);
                     BigInteger g2yCliente = G2X(g, bix, p);
+                    System.out.println("\nCliente " + id + " - tiempo acumulado de generacion de g2y: " + tiempoG2Y + " ns\n");
 
                     //6b. Enviamos g2y al servidor
                     ac.println(g2yCliente.toString());
@@ -106,9 +110,10 @@ public class ClienteThread extends Thread {
                     
                     //8a. Encriptamos la consulta
                     byte[] consultaEncriptada = csf.senc(consultaBytes, ck_client, iv1Spec, this.id);
-                    System.out.println("\nCliente " + id + " - tiempo acumulado de encriptacion de consulta: " + csf.getTiempoCifrado() + " ns");
-                    
+                    System.out.println("\nCliente " + id + " - tiempo acumulado de encriptacion de consulta: " + csf.getTiempoCifrado() + " ns\n");
                     byte[] hashConsulta = csf.hmac(consultaBytes, ck_mac);
+                    System.out.println("\nCliente " + id + " - tiempo acumulado de generacion de HMAC: " + csf.getTiempoHMAC() + " ns\n");
+
                     String consultaEncriptadaString = byte2str(consultaEncriptada);
                     String hashConsultaString = byte2str(hashConsulta);
 
@@ -194,7 +199,11 @@ public class ClienteThread extends Thread {
 	}
 
     private BigInteger G2X(BigInteger base, BigInteger exponente, BigInteger modulo) {
-		return base.modPow(exponente,modulo);
+        long startTime = System.nanoTime();
+        BigInteger result = base.modPow(exponente, modulo);
+        long endTime = System.nanoTime();
+        tiempoG2Y += (endTime - startTime);
+		return result;
 	}
 
     private byte[] generateIvBytes() {
