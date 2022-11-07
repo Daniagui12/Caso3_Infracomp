@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;
 import java.security.PrivateKey;
-//import java.security.PublicKey;
+import java.security.PublicKey;
 import java.security.SecureRandom;
 //import java.util.Random;
 
@@ -60,7 +60,7 @@ public class SrvThread extends Thread {
 	    try {
 
 			PrivateKey privadaServidor = f.read_kmin("Caso 3/datos_asim_srv.pri",dlg);
-			//PublicKey publicaServidor = f.read_kplus("Caso 3/datos_asim_srv.pub",dlg);
+			PublicKey publicaServidor = f.read_kplus("Caso 3/datos_asim_srv.pub",dlg);
 			PrintWriter ac = new PrintWriter(sc.getOutputStream() , true);
 			BufferedReader dc = new BufferedReader(new InputStreamReader(sc.getInputStream()));
 				    	
