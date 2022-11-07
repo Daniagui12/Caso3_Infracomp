@@ -69,7 +69,7 @@ public class ClienteThread extends Thread {
             System.out.println("Cliente " + this.id + " verificando firma de " + completeDiffieHelman);
             try {
                 boolean signatureVerified = csf.checkSignature(publicKey, signatureBytes, completeDiffieHelman);
-                System.out.println("\nCliente " + id + " - tiempo acumulado de verificacion de firma: " + csf.getTiempoFirma() + " ns\n");
+                System.out.println("Cliente " + id + " - tiempo acumulado de verificacion de firma: " + csf.getTiempoFirma() + " ns");
                 if (signatureVerified) {
                     System.out.println("Cliente " + this.id + " - La firma fue verificada correctamente");
 
@@ -83,7 +83,7 @@ public class ClienteThread extends Thread {
                     Long longx = Long.valueOf(x);
                     BigInteger bix = BigInteger.valueOf(longx);
                     BigInteger g2yCliente = G2X(g, bix, p);
-                    System.out.println("\nCliente " + id + " - tiempo acumulado de generacion de g2y: " + tiempoG2Y + " ns\n");
+                    System.out.println("Cliente " + id + " - tiempo acumulado de generacion de g2y: " + tiempoG2Y + " ns");
 
                     //6b. Enviamos g2y al servidor
                     ac.println(g2yCliente.toString());
@@ -110,9 +110,9 @@ public class ClienteThread extends Thread {
                     
                     //8a. Encriptamos la consulta
                     byte[] consultaEncriptada = csf.senc(consultaBytes, ck_client, iv1Spec, this.id);
-                    System.out.println("\nCliente " + id + " - tiempo acumulado de encriptacion de consulta: " + csf.getTiempoCifrado() + " ns\n");
+                    System.out.println("Cliente " + id + " - tiempo acumulado de encriptacion de consulta: " + csf.getTiempoCifrado() + " ns");
                     byte[] hashConsulta = csf.hmac(consultaBytes, ck_mac);
-                    System.out.println("\nCliente " + id + " - tiempo acumulado de generacion de HMAC: " + csf.getTiempoHMAC() + " ns\n");
+                    System.out.println("Cliente " + id + " - tiempo acumulado de generacion de HMAC: " + csf.getTiempoHMAC() + " ns");
 
                     String consultaEncriptadaString = byte2str(consultaEncriptada);
                     String hashConsultaString = byte2str(hashConsulta);
