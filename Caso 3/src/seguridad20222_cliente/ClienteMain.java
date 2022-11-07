@@ -20,6 +20,7 @@ public class ClienteMain {
                 System.out.println("Creating socket: done");
                 String id = String.valueOf(i);
                 ClienteThread c = new ClienteThread(sc, id);
+                System.out.println("Creating client "+ i + ": done");
                 c.start();
             }
             System.out.println("All clients created");

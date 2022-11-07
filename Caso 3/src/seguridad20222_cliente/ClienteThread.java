@@ -40,6 +40,7 @@ public class ClienteThread extends Thread {
             this.publicKey = csf.read_kplus("Caso 3/datos_asim_srv.pub", this.id);
             this.dc = new BufferedReader(new InputStreamReader(sc.getInputStream()));
 
+            System.out.println("Cliente " + this.id + ": Iniciando protocolo de autenticacion");
             // 1. Se envia el mensaje de inicio seguro
             ac.println("SECURE INIT");
 
@@ -48,18 +49,20 @@ public class ClienteThread extends Thread {
             // Recibe g
             linea = dc.readLine();
             BigInteger g = new BigInteger(linea);
+            System.out.println("Cliente " + this.id + ": Recibido g: " + g);
             
             // Recibe p
             linea = dc.readLine();
             BigInteger p = new BigInteger(linea);
+            System.out.println("Cliente " + this.id + ": Recibido p: " + p);
 
             // Recibe g2x
             linea = dc.readLine();
             BigInteger g2x = new BigInteger(linea);
+            System.out.println("Cliente " + this.id + ": Recibido g2x: " + g2x);
 
             // Recibe la firma y procede a verificarla
             String signature = dc.readLine();
-            System.out.println(signature);
 
             //Se usa el metodo proporcionado para pasar la firma de String a byte[]
             byte[] signatureBytes = str2byte(signature);
@@ -83,6 +86,7 @@ public class ClienteThread extends Thread {
                     Long longx = Long.valueOf(x);
                     BigInteger bix = BigInteger.valueOf(longx);
                     BigInteger g2yCliente = G2X(g, bix, p);
+                    System.out.println("Cliente " + this.id + " - g2y calculado: " + g2yCliente);
                     System.out.println("Cliente " + id + " - tiempo acumulado de generacion de g2y: " + tiempoG2Y + " ns");
 
                     //6b. Enviamos g2y al servidor
